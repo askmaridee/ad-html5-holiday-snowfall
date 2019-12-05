@@ -1,0 +1,372 @@
+<!--
+        Template to use for rich media
+    -->
+    <div id="hc_richmedia">
+        <meta name="viewport" content="width=device-width">
+		<style type="text/css">
+            body {
+            	margin: 0;
+            }
+        
+        	#hc_richmedia {
+				max-width: 650px;
+                margin: 0 auto;
+			}
+			.hc_tabs_button {
+				width: 100%;
+				position: relative;
+				display: table;
+			}
+            .hc_tabs_button .table-cell {
+                float: left;
+                list-style-type: none;
+                border-right: 1px solid #797d86;
+                border-bottom: 1px solid #797d86;
+            }
+            .hc_tabs_button .table-cell:last-child {
+                border-right: none;
+            }
+            .hc_tabs_button .table-cell a {
+                display: block;
+                text-transform: uppercase;
+                text-align: center;
+                text-decoration: none;
+                color: white;
+                font-size: .8em;
+                padding: .77em .5em;
+                white-space: nowrap;
+            }
+            .hc_tabs_button .hc_tabs_button_events { width: 30%; }
+            .hc_tabs_button .hc_tabs_button_recipes { width: 39%; }
+            .hc_tabs_button .hc_tabs_button_videos { width: 30%;  }
+            .hc_tabs_button .hc_tabs_button_events.active { background-color: #4380c0; }
+            .hc_tabs_button .hc_tabs_button_recipes.active { background-color: #4380c0; }
+            .hc_tabs_button .hc_tabs_button_videos.active { background-color: #4380c0;  }
+
+            #hc_videos, #hc_events {
+                display: none;
+            }
+            #hc_events, #hc_videos, #hc_recipes {
+                color: white;
+            }
+            .hc_wrapper {
+                width: 100%;
+				height: 100%;
+            }
+            .table { display: table; }
+            .table-row { display: table-row; }
+            .table-cell {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            #hc_richmedia .hc_expand {
+                background: transparent url('images/heineken/45697.gif') no-repeat;
+                width: 300px;
+                height: 250px;
+                display: block;
+                margin: 0 auto;
+            }
+            #hc_richmedia .hc_closebtn {
+                position: relative;
+                z-index: 3;
+                cursor: pointer;
+                display: block;
+                height: 25px;
+                float: right;
+                width: 25px;
+                right: 10px;
+                top: 8px;
+            }
+            #hc_richmedia .hc_closebtn img {
+                position:relative;
+                z-index:20;
+				width: 100%;
+            }
+            #hc_richmedia .hc_content {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                z-index: 1;
+                margin-right: 0;
+                background: #135c2f no-repeat url("images/heineken/snow1_60_640x1136.jpg");
+                max-width: 640px;
+                background-size: 100% 100%;
+            }
+            #hc_richmedia .hc_header { 
+				display: none; 
+				text-align: right;
+				width: 100%;
+				background-color: #e8a412;
+				max-width: 640px;
+			}
+						
+			/**CUSTOM**/
+			
+			#hc_richmedia .hc_header.expanded { 
+				display: block; 
+			}
+            
+            .hc_wrapper img {
+				width: 100%;
+				display: block;
+			}
+            
+            .hc_snow {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-image: url("images/heineken/snow14_60_640x1136.jpg");
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                /*opacity: .3;*/
+            }
+            
+            .hc_logo {
+                text-align: center;
+                position: relative;
+                top: 2%;
+            }
+            
+            .hc_logo img {
+                max-width: 100px;
+                margin: 0 auto;
+            }
+			
+			.hc_title {
+				position: relative;
+				padding: 1em 2em 0;
+			}
+            
+            .hc_title.short, .hc_title.shortest {
+                padding: 0 2em 0;
+            }
+            
+            .hc_title img {
+                max-width: 550px;
+                margin: 0 auto;
+            }
+            
+            .hc_title.shortest img {
+                max-width: 300px;
+            }
+            
+            .hc_clickNow {
+                text-align: center;
+                position: relative;
+                padding: 2em 7em 0;
+            }
+            
+            .hc_clickNow.short, .hc_clickNow.shortest {
+                padding: .5em 7em 0;
+            }
+            
+            .hc_clickNow img {
+                max-width: 200px;
+                margin: 0 auto;
+            }
+            
+            .hc_clickNow.shortest img {
+                max-width: 100px;
+            }
+            
+            .hc_star {
+                position: relative;
+                z-index: 2;
+                margin-top: -1em;
+                margin-bottom: 2em;
+            }
+            
+            .hc_star img {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .hc_star.short img {
+                max-width: 250px;
+            }
+			
+            .hc_bottom {
+                position: absolute;
+                bottom: 0;
+                background: url("images/heineken/45704.png");
+                background-position: 50% 20%;
+            }
+			
+			.hc_elogo {
+                position: absolute;
+                bottom: 2%;
+                left: 2%;
+            }
+            
+            .hc_elogo img {
+                max-width: 300px;
+            }
+			
+			@media screen and (max-width: 450px) {
+				
+				#hc_richmedia .hc_closebtn {
+					max-width: 20px;
+				}
+				
+				.hc_logo {
+					
+				}
+				
+				
+			}
+			
+			@media screen and (max-width: 360px) {
+				
+				.hc_elogo {
+                    bottom: 1%;
+                }
+				
+                .hc_star {
+                    padding: 0 3em;
+                }
+			}
+
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+		<!--<script src="scripts/heineken/hc_framework-0_2.js"></script>-->
+        <script src="scripts/heineken/framework.js"></script>
+  		<script type="text/javascript">
+			"use strict";
+			var hc_ = new hc_({
+				"prod" : false,
+    			"clientId" : "",
+    			"targetUrl" : "",
+    			"publisherId" : "%p%",
+    			"augmeId" : "%augmeid%",
+    			"adId" : "%ad_id%",
+    			"campaignId" : "%c%",
+				"track" : ""
+			});
+            
+            var imageBaseName = ["images/heineken/bottles_frame1_640x1136.png", "images/heineken/bottles_frame2_640x1136.png", "images/heineken/bottles_frame3_640x1136.png", "images/heineken/bottles_frame4_640x1136.png", "images/heineken/bottles_frame5_640x1136.png", "images/heineken/bottles_frame6_640x1136.png", "images/heineken/bottles_frame7_640x1136.png", "images/heineken/bottles_frame8_640x1136.png", "images/heineken/bottles_frame9_640x1136.png", "images/heineken/bottles_frame10_640x1136.png", "images/heineken/bottles_frame11_640x1136.png", "images/heineken/bottles_frame12_640x1136.png", "images/heineken/bottles_frame13_640x1136.png", "images/heineken/bottles_frame14_640x1136.png", "images/heineken/snow1_60_640x1136.jpg", "images/heineken/snow2_60_640x1136.jpg", "images/heineken/snow3_60_640x1136.jpg", "images/heineken/snow4_60_640x1136.jpg", "images/heineken/snow5_60_640x1136.jpg", "images/heineken/snow6_60_640x1136.jpg", "images/heineken/snow7_60_640x1136.jpg", "images/heineken/snow8_60_640x1136.jpg", "images/heineken/snow9_60_640x1136.jpg", "images/heineken/snow10_60_640x1136.jpg", "images/heineken/snow11_60_640x1136.jpg", "images/heineken/snow12_60_640x1136.jpg", "images/heineken/snow13_60_640x1136.jpg", "images/heineken/snow14_60_640x1136.jpg"
+			];
+
+			function preloadBasic(e) {
+				var t = 0;
+				var n = [];
+				for (t = 0; t < e.length; t++) {
+					n[t] = new Image;
+					n[t].src = e[t]
+				}
+                console.log("completed");
+			}
+
+			preloadBasic(imageBaseName);
+            
+            var myAnim = "";
+            var mySnow = "";
+			/*3rd party impression tracking*/
+    		/*var i = new Image();
+    		i.src = 'http://ad.doubleclick.net/ad/N3220.285074.HIPCRICKET/B8340897.112703590;sz=1x1;ord='+new Date().getTime();*/
+			hc_.events.hc_expand_after = function () {
+				//console.log(window.innerHeight);
+                var winHeight = window.innerHeight;
+                hc_$("#hc_richmedia .hc_content").css("height", winHeight);
+                hc_$(".hc_snow").css("height", winHeight);
+                if (winHeight < 650) {
+                    if (winHeight <= 530) {
+                        hc_$(".hc_title").addClass("shortest").removeClass("short");
+                        hc_$(".hc_star").addClass("short");
+                        hc_$(".hc_clickNow").addClass("shortest").removeClass("short");
+                    } else {
+                        hc_$(".hc_title").addClass("short").removeClass("shortest");
+                        hc_$(".hc_star").addClass("short");
+                        hc_$(".hc_clickNow").addClass("short").removeClass("shortest");
+                    }
+                    
+                } else {
+                    hc_$(".hc_title").removeClass("short");
+                    hc_$(".hc_star").removeClass("short");
+                    hc_$(".hc_clickNow").removeClass("short");
+                }
+                
+                hc_$( window ).resize(function() {
+					winHeight = window.innerHeight;
+                    hc_$("#hc_richmedia .hc_content").css("height", winHeight);
+                    hc_$(".hc_snow").css("height", winHeight);
+                    if (winHeight < 650) {
+                        hc_$(".hc_title").addClass("short");
+                        hc_$(".hc_star").addClass("short");
+                        hc_$(".hc_clickNow").addClass("short");
+                    } else {
+                        hc_$(".hc_title").removeClass("short");
+                        hc_$(".hc_star").removeClass("short");
+                        hc_$(".hc_clickNow").removeClass("short");
+                    }
+				});
+                
+                hc_$('.hc_closebtn').click(function(e) {
+				    console.log("clicked");
+				    clearInterval(myAnim);
+                    clearInterval(mySnow);
+                    hc_$(".hc_star img").attr('src', "images/heineken/bottles_frame1_640x1136.png");
+                    hc_$(".hc_snow").css('background-image', 'url("images/heineken/snow1_640x1136.jpg")');
+                });
+                
+                /*Bottle Animation*/
+                var nextImage = "images/heineken/bottles_frame1_640x1136.png";
+                var frames = 2;
+                var numFrames = 14;
+                //console.log(frames);
+                
+                myAnim = setInterval(function(){
+                    hc_$(".hc_star img").attr('src', nextImage);
+                    if (frames <= numFrames) {
+                        nextImage = "images/heineken/bottles_frame"+frames+"_640x1136.png";
+                        frames++;
+                    } 
+                }, 50);
+                
+                
+               
+ 
+                    
+                    /*Snow Animation*/
+                    var nextSnow = "images/heineken/snow1_60_640x1136.jpg";
+                    var frameSnow = 2;
+                    var numSnow = 14;
+                    var times = 1;
+                    //console.log(frameSnow);
+                
+                        
+                    mySnow = setInterval(function(){
+                        hc_$(".hc_snow").css('background-image', 'url("' + nextSnow + '")');
+                        hc_$(".hc_snow").css('background-size', '100% 100%');
+
+                        if (frameSnow <= numSnow) {
+                            nextSnow = "images/heineken/snow" + frameSnow + "_60_640x1136.jpg";
+                            //console.log(nextSnow);
+                            frameSnow++;
+                        }
+
+
+                    }, 150);
+                    
+                
+			};
+		</script>
+        <!--<script type="text/javascript" src="mraid.js"></script>-->
+        
+
+        <div class="hc_initial_view">
+            <a href="#" class="hc_expand"></a>
+        </div>
+        <div class="hc_content" id="hc_content" style="display:none;">
+            <div class="hc_wrapper">
+                <div class="hc_closebtn" style="display:none;"><img src="images/heineken/45689.png" /></div>
+                <div class="hc_snow"></div>
+                <div class="hc_logo"><img src="images/heineken/45701.png" alt="Heineken. Open Your World." /></div>
+				<div class="hc_title"><img src="images/heineken/45702.png" alt="Spark Your Holidays. Save on Heineken." /></div>
+                <div class="hc_clickNow"><a href="http://www.heineken.com/agegateway.aspx"><img src="images/heineken/45687.png" alt="Click Now" /></a></div>
+                <div class="hc_star"><img src="images/heineken/bottles_frame1_640x1136.png" alt="Click Now" /></div>
+                <div class="hc_bottom"><img src="images/heineken/45686.png" alt="Heinekin" /></div>
+                <div class="hc_elogo"><img src="images/heineken/45690.png" alt="Brewed in Holland. Imported by HeinekenUSA Inc., New York, NY.  &copy;2014" /></div>
+            </div>
+        </div>
+    </div>
